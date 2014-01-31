@@ -1,6 +1,6 @@
-###Quantitative Methods, Spring 2014
-##The New School
-##Aaron Hill
+##Quantitative Methods, Spring 2014
+####The New School
+####Aaron Hill
 
 -----
 
