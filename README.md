@@ -4,4 +4,4 @@
 
 -----
 
-This is the a course repository. It includes course materials, including the syllabus, lecture notes, statistical computing assignments, and datasets. 
+This is a course repository. It includes course materials, including the syllabus, lecture notes, statistical computing assignments, and datasets. 
