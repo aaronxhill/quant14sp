@@ -72,6 +72,10 @@ max(states$DENSITY) - min(states$DENSITY)# Output:
 
 # [1] 1133.099
 
+# The mode is somewhat tricky to get in R, so for this class, a special function "getmode" was written to show the mode:
+
+getmode(states$REGION)
+
 # Compute the variance and standard deviation for DENSITY: 
 
 var(states$DENSITY)
