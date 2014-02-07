@@ -1,5 +1,8 @@
 #install.packages("RCurl")
 
+# IF USING WINDOWS: UNCOMMENT AND RUN THIS: 
+#options(RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")))
+
 # function to get mode:
 getmode <- function(x) {
 	z <- table(x)
