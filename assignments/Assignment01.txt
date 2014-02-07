@@ -4,9 +4,9 @@ assignment01.txt
 rscript01.R
 
 Submit as directed. 
-Assignment: 1.	List the level of measurement for each of the following variables: a.	caseb.	countryc.	hdirankd.	hdicate.	pop2004f.	URBANg.	physiciansh.	mort2004i.	tele2004j.	cell2003k.	internet03l.	gdpm.	inequalityn.	educ04o.	milit2004p.	debt04q.	cde2003r.	lifefs.	lifem 2.	What is the average infant mortality rate (per 1,000 births) in 2004? 
+Assignment: 1.	List the level of measurement for each of the following variables: a.	(This variable was deleted.) b.	countryc.	hdirankd.	hdicate.	pop2004f.	URBANg.	physiciansh.	mort2004i.	tele2004j.	cell2003k.	internet03l.	gdpm.	inequalityn.	educ04o.	milit2004p.	debt04q.	cde2003r.	lifefs.	lifem 2.	What is the average infant mortality rate (per 1,000 births) in 2004? 
 3.	What is the maximum infant mortality rate (per 1,000 births) in 2004?4.	What is the median for cell phones per 1,000 people in 2003?5.	What is the 95th percentile for cell phones per 1,000 people in 2003? 6.	Compare the median and 95th percentile for cell phones per 1,000 people in 2003.  What does this comparison tell you about the distribution of this variable? 
 7.	Describe hdicat
 8.	Describe hdirank
 9.	Did you describe hdicat and hdirank differently?  Why or why not?  What does each description tell you?  How do these variables relate to each other?  
-10.	Why is it important to use Frequency Tables for nominal and ordinal variables and Explore for interval- ratio variables?  
+10.	Why is it important to use Frequency Tables for nominal and ordinal variables and other descriptive statistics for interval- ratio variables?  

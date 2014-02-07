@@ -106,7 +106,7 @@ IQR(states$DENSITY)
 
 # To get the value of a specific percentile, use the quantile function. Find the value of the 60th percentile:
  
-quantile(states$DENSITY, 0.60)
+quantile(states$DENSITY, 0.60, na.rm=TRUE)
 
 # Output: 
 
