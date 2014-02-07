@@ -29,8 +29,8 @@ freqtable <- function(x) {
 }
 
 ################## COUNTRY #############################################################
-options(RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")))
-library(RCurl)
+#options(RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")))
+#library(RCurl)
 
 # read file from the cloud (GitHub)
 x <- getURL("https://raw2.github.com/aaronxhill/quant14sp/e6cc53e98ce09a091003d579bdd6d6300e47109f/datasets/country.csv")
@@ -124,3 +124,5 @@ dfs <- c("country", "states")
 
 "The following datasets were read into memory:"
 dfs
+
+rm(xadmin)
