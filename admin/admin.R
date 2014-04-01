@@ -145,14 +145,80 @@ UI.description <- 'Presence of Uterine Irritability (1 = Yes, 0 = No)'
 FTV.description <- 'Number of Physician Visits During the First Trimester (0 = None, 1 = One, 2 = Two, etc.)'
 BWT.description <- 'Birth Weight in Grams'
 
+################## INSTRUCTOREVALS #################################################
+
+# read file from the cloud (GitHub)
+x <- getURL("https://raw.githubusercontent.com/aaronxhill/quant14sp/master/datasets/instructorevals.csv")
+instructorevals <- read.csv(text = x)
+rm(x)
+
+head(instructorevals)
+
+# metadata about variables
+Insteval.description <- 'Instructor evaluation'
+Clarity.description <- 'Clarity of presentation'
+Stimul.description <- 'Stimulating presentation'
+Knowledge.description <- "Instructor's knowledge of subject area"
+Interest.description <- 'Your interest in subject'
+Grade.description <- 'Your expected grade'
+
+################## DRUGTREATMENT ###################################################
+
+# read file from the cloud (GitHub)
+x <- getURL("https://raw.githubusercontent.com/aaronxhill/quant14sp/master/datasets/drugtreatment.csv")
+drugtreatment <- read.csv(text = x)
+rm(x)
+
+head(drugtreatment)
+
+### FIXES ###
+
+drugtreatment$DFREE <- (drugtreatment$DFREE == 1)
+drugtreatment$IVHX <- factor(drugtreatment$IVHX, labels = c("never", "previous", "recent"))
+drugtreatment$RACE <- factor(drugtreatment$RACE, labels = c("white", "other"))
+drugtreatment$TREAT <- factor(drugtreatment$TREAT, labels = c("Short", "Long"))
+drugtreatment$SITE <- factor(drugtreatment$SITE, labels = c("A", "B"))
+
+# metadata about variables
+ID.description <- 'ID'
+AGE.description <- 'Age'
+BECK.description <- 'Beck depression score at admission'
+IVHX.description <- 'IV drug use history at admission'
+NDRUGTX.description <- 'Number of prior drug treatments'
+RACE.description <- 'Race'
+TREAT.description <- 'Treatment randomization assignment'
+SITE.description <- 'Treatment site'
+DFREE.description <- 'Remained drug free for 12 months'
+
+################## EMPDAT ##########################################################
+
+# read file from the cloud (GitHub)
+x <- getURL("https://raw.githubusercontent.com/aaronxhill/quant14sp/master/datasets/empdat.csv")
+empdat <- read.csv(text = x)
+
+### FIX DATE (convert from factor to date; correct two-year date problem) ###
+
+# convert factor to date class
+empdat$dob.datex <- as.Date(empdat$dob, format = "%m/%d/%y")
+
+# set all dates to 20th century
+empdat$dob.date <- as.Date(ifelse(empdat$dob.datex > Sys.Date(), 
+  format(empdat$dob.datex, "19%y-%m-%d"), 
+  format(empdat$dob.datex)))
+
+# delete raw and interim date variables 
+empdat$dob.datex <-NULL
+empdat$dob <-NULL
+
+
 
 ################## END #############################################################
 
 #check naming conventions
 
-#names <- c(colnames(country), colnames(states), colnames(lowbwt))
-#namestab <- table(names)
-#namestab
+names <- c(colnames(country), colnames(states), colnames(lowbwt), colnames(empdat), colnames(drugtreatment), colnames(instructorevals))
+namestab <- table(names)
+namestab
 
 ####################################################################################
 rm(x)
