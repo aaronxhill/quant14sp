@@ -33,7 +33,7 @@ freqtable <- function(x) {
 #library(RCurl)
 
 # read file from the cloud (GitHub)
-x <- getURL("https://raw2.github.com/aaronxhill/quant14sp/e6cc53e98ce09a091003d579bdd6d6300e47109f/datasets/country.csv")
+x <- getURL("https://raw2.github.com/aaronxhill/quant14sp/e6cc53e98ce09a091003d579bdd6d6300e47109f/datasets/country.csv", ssl.verifypeer=FALSE)
 country <- read.csv(text = x)
 
 # clean country names, encoding problems for special characters
@@ -67,7 +67,7 @@ lifem.description <- 'Male life expectancy 2004'
 ################## STATES #############################################################
 
 # read file from the cloud (GitHub)
-x <- getURL("https://raw2.github.com/aaronxhill/quant14sp/e6cc53e98ce09a091003d579bdd6d6300e47109f/datasets/states.csv")
+x <- getURL("https://raw2.github.com/aaronxhill/quant14sp/e6cc53e98ce09a091003d579bdd6d6300e47109f/datasets/states.csv", ssl.verifypeer=FALSE)
 states <- read.csv(text = x)
 
 # metadata about variables
@@ -121,7 +121,7 @@ TURNOUT.description <- '% of voting age population that voted'
 ################## LOWBWT #############################################################
 
 # read file from the cloud (GitHub)
-x <- getURL("https://raw2.github.com/aaronxhill/quant14sp/master/datasets/lowbwt.csv")
+x <- getURL("https://raw2.github.com/aaronxhill/quant14sp/master/datasets/lowbwt.csv", ssl.verifypeer=FALSE)
 lowbwt <- read.csv(text = x)
 
 lowbwt$LOW <- (lowbwt$LOW == 1)
@@ -148,7 +148,7 @@ BWT.description <- 'Birth Weight in Grams'
 ################## INSTRUCTOREVALS #################################################
 
 # read file from the cloud (GitHub)
-x <- getURL("https://raw.githubusercontent.com/aaronxhill/quant14sp/master/datasets/instructorevals.csv")
+x <- getURL("https://raw.githubusercontent.com/aaronxhill/quant14sp/master/datasets/instructorevals.csv", ssl.verifypeer=FALSE)
 instructorevals <- read.csv(text = x)
 rm(x)
 
@@ -165,7 +165,7 @@ Grade.description <- 'Your expected grade'
 ################## DRUGTREATMENT ###################################################
 
 # read file from the cloud (GitHub)
-x <- getURL("https://raw.githubusercontent.com/aaronxhill/quant14sp/master/datasets/drugtreatment.csv")
+x <- getURL("https://github.com/aaronxhill/quant14sp/raw/master/datasets/drugtreatment.csv", ssl.verifypeer=FALSE)
 drugtreatment <- read.csv(text = x)
 rm(x)
 
@@ -193,7 +193,7 @@ DFREE.description <- 'Remained drug free for 12 months'
 ################## EMPDAT ##########################################################
 
 # read file from the cloud (GitHub)
-x <- getURL("https://raw.githubusercontent.com/aaronxhill/quant14sp/master/datasets/empdat.csv")
+x <- getURL("https://raw.githubusercontent.com/aaronxhill/quant14sp/master/datasets/empdat.csv, ssl.verifypeer=FALSE")
 empdat <- read.csv(text = x)
 
 ### FIX DATE (convert from factor to date; correct two-year date problem) ###
@@ -216,9 +216,9 @@ empdat$dob <-NULL
 
 #check naming conventions
 
-names <- c(colnames(country), colnames(states), colnames(lowbwt), colnames(empdat), colnames(drugtreatment), colnames(instructorevals))
-namestab <- table(names)
-namestab
+#names <- c(colnames(country), colnames(states), colnames(lowbwt), colnames(empdat), colnames(drugtreatment), colnames(instructorevals))
+#namestab <- table(names)
+#namestab
 
 ####################################################################################
 rm(x)
