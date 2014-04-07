@@ -152,8 +152,6 @@ x <- getURL("https://raw.githubusercontent.com/aaronxhill/quant14sp/master/datas
 instructorevals <- read.csv(text = x)
 rm(x)
 
-head(instructorevals)
-
 # metadata about variables
 Insteval.description <- 'Instructor evaluation'
 Clarity.description <- 'Clarity of presentation'
@@ -165,11 +163,10 @@ Grade.description <- 'Your expected grade'
 ################## DRUGTREATMENT ###################################################
 
 # read file from the cloud (GitHub)
-x <- getURL("https://github.com/aaronxhill/quant14sp/raw/master/datasets/drugtreatment.csv", ssl.verifypeer=FALSE)
+x <- getURL("https://raw.githubusercontent.com/aaronxhill/quant14sp/master/datasets/drugtreatment.csv", ssl.verifypeer=FALSE)
+
 drugtreatment <- read.csv(text = x)
 rm(x)
-
-head(drugtreatment)
 
 ### FIXES ###
 
@@ -193,7 +190,7 @@ DFREE.description <- 'Remained drug free for 12 months'
 ################## EMPDAT ##########################################################
 
 # read file from the cloud (GitHub)
-x <- getURL("https://raw.githubusercontent.com/aaronxhill/quant14sp/master/datasets/empdat.csv, ssl.verifypeer=FALSE")
+x <- getURL("https://raw.githubusercontent.com/aaronxhill/quant14sp/master/datasets/empdat.csv", ssl.verifypeer=FALSE)
 empdat <- read.csv(text = x)
 
 ### FIX DATE (convert from factor to date; correct two-year date problem) ###
@@ -209,6 +206,7 @@ empdat$dob.date <- as.Date(ifelse(empdat$dob.datex > Sys.Date(),
 # delete raw and interim date variables 
 empdat$dob.datex <-NULL
 empdat$dob <-NULL
+
 
 
 
