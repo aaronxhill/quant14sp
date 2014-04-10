@@ -1,10 +1,7 @@
-###################################################################################################
-################# ADMIN CODE -- DO NOT MODIFY #####################################################
-options(RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")))
-library(RCurl)
-xadmin <- getURL("https://raw.github.com/aaronxhill/quant14sp/master/admin/admin.R")
-eval(parse(text=xadmin), envir= .GlobalEnv)
-###################################################################################################
+############################################################
+# Quantitative Methods, Hill
+# Statistical Computing Lab 3
+############################################################
 
 ### Variable Recoding# Often, we need to change the level of measurement of a variable.  It is possible to collapse interval-ratio level variables into nominal or ordinal variables.  It is not possible to transform nominal or ordinal variables into interval-ratio variables.  We can create a new nominal/ordinal version of an interval-ratio variable by recoding it.  Recoding a variable should follow this important rule: Variables should be exhaustive and mutually exclusive (meaning: every observation must fit into a category, but only one category).  # Before you recode a variable, you need to decide the coding scheme.  To decide the coding scheme, you need to understand the variable’s distribution:  
 

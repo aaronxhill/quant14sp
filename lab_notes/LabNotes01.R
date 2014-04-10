@@ -1,11 +1,3 @@
-###################################################################################################
-################# ADMIN CODE -- DO NOT MODIFY #####################################################
-options(RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")))
-library(RCurl)
-xadmin <- getURL("https://raw.github.com/aaronxhill/quant14sp/master/admin/admin.R")
-eval(parse(text=xadmin), envir= .GlobalEnv)
-###################################################################################################
-
 ############################################################# Quantitative Methods, Hill# Statistical Computing Lab 1############################################################
 # We will use R software for your work in this course. It is powerful open-source, free software for data analysis. It can be installed on MacOS, Windows, or Unix/Linux: 
 #http://www.r-project.org
