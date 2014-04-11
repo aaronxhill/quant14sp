@@ -5,8 +5,6 @@
 
 ### dataset: drugtreatment
 
-
-
 ### NOMINAL measures of association
 
 # start with a crosstab: 
@@ -55,10 +53,10 @@ gamma.ord(ordinal.xtab)
 
 ### SCALE measures of association
 
-cor(drugtreatment$BECK, drugtreatment$AGE, method="spearman")
+cor(drugtreatment$BECK, drugtreatment$AGE, method="spearman", use="complete.obs")
 
 
 
 ### INTERVAL-RATIO measures of association
 
-cor(drugtreatment$NDRUGTX, drugtreatment$AGE, method="pearson")
+cor(empdat$age, empdat$salary, method="pearson", use="complete.obs")
