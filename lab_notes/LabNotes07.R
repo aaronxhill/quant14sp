@@ -59,4 +59,4 @@ cor(drugtreatment$BECK, drugtreatment$AGE, method="spearman", use="complete.obs"
 
 ### INTERVAL-RATIO measures of association
 
-cor(empdat$age, empdat$salary, method="pearson", use="complete.obs")
+cor(drugtreatment$BECK, drugtreatment$AGE, method="pearson", use="complete.obs")
